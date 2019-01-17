@@ -1,0 +1,10 @@
+{
+  "name": "ctci6",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nathan Carlson <nathan.s.carlson@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
