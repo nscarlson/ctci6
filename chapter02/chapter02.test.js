@@ -1,4 +1,5 @@
 const chapter02 = require('./chapter02')
+const SinglyList = require('../util/SinglyList')
 
 describe('Chapter 02', () => {
     describe('deleteMiddleNode', () => {
@@ -39,7 +40,15 @@ describe('Chapter 02', () => {
 
     describe('returnKthToLast', () => {
         it('returns correct results', () => {
-            expect(chapter02.returnKthToLast()).toEqual()
+            expect(chapter02.returnKthToLast(
+                new SinglyList()
+                    .add('a')
+                    .add('b')
+                    .add('c')
+                    .add('d')
+                    .add('e')
+                    .add('f'), 3
+                ).data).toEqual('d')
         })
     })
 

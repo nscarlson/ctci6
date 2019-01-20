@@ -3,7 +3,9 @@ const chapter01 = require('./chapter01')
 describe('Chapter 01', () => {
     describe('isUniqueChars', () => {
         it('returns correct results', () => {
-            expect(chapter01.isUniqueChars()).toEqual()
+            expect(chapter01.isUniqueChars('abcdefghijklmnopqrstuvwxyz')).toBe(true)
+            expect(chapter01.isUniqueChars('abbcdefg')).toBe(false)
+            expect(chapter01.isUniqueChars('C1qhUbjn1RBMvAt8fX2y')).toBe(false)        
         })
     })
 
@@ -21,7 +23,12 @@ describe('Chapter 01', () => {
 
     describe('permutation', () => {
         it('returns correct results', () => {
-            expect(chapter01.permutation()).toEqual()
+            expect(chapter01.permutation('ISTHISTHEREALLIFE', 'SHELLFIRESHATIETI')).toBe(true)
+            expect(chapter01.permutation('ISTHI\0STHEREALLIFE', 'SHELLFIRESHATIE\0TI')).toBe(true)
+            expect(chapter01.permutation('IS THIS JUST FANTASY', 'JUSTIFY SINHS TAT AS')).toBe(true)
+            expect(chapter01.permutation('abcdef', 'abcdeg')).toBe(false)
+            expect(chapter01.permutation('', '')).toBe(true)
+            expect(chapter01.permutation('q🐳f🔥g😂', '🔥qf🐳😂g')).toBe(true)
         })
     })
 
