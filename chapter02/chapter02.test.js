@@ -4,7 +4,16 @@ const SinglyList = require('../util/SinglyList')
 describe('Chapter 02', () => {
     describe('deleteMiddleNode', () => {
         it('returns correct results', () => {
-            expect(chapter02.deleteMiddleNode()).toEqual()
+            const list = new SinglyList()
+                .add('a')
+                .add('b')
+                .add('c')
+            const node = list.head.next
+            const result = chapter02.deleteMiddleNode(node)
+
+            expect(result).toEqual(true)
+            expect(list.head.data).toEqual('a')
+            expect(list.head.next.data).toEqual('c')
         })
     })
 
@@ -40,8 +49,8 @@ describe('Chapter 02', () => {
 
     describe('returnKthToLast', () => {
         it('returns correct results', () => {
-            expect(chapter02.returnKthToLast(
-                new SinglyList()
+            expect(
+                chapter02.returnKthToLast(new SinglyList()
                     .add('a')
                     .add('b')
                     .add('c')
