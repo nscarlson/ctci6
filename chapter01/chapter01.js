@@ -2,7 +2,21 @@
  * Implement an algorithm to determine if a string has all unique characters.
  * What if you cannot use additional data structures?
  */
-const isUniqueChars = () => {
+const isUniqueChars = (str) => {
+    const characters = []
+
+    // O(n) = n, where n is the length of str
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i]
+        const charCode = char.charCodeAt(0)
+
+        if (characters[charCode]) {
+            return false
+        } else {
+            characters[charCode] = true
+        }
+    }
+    return true
 }
 
 /**
@@ -38,7 +52,35 @@ const palindromePermutation = () => {
 /**
  * Given two strings, write a method to decide if one is a permutation of the other.
  */
-const permutation = () => {
+const permutation = (str1, str2) => {
+    const charCounts = []
+
+    if (str1.length !== str2.length) {
+        return false
+    }
+
+    for (let char of [...str1]) {
+        const charCode = char.codePointAt(0)
+
+        if (!charCounts[charCode]) {
+            charCounts[charCode] = 1
+        } else {
+            charCounts[charCode]++
+        }
+    }
+
+    for (let char of [...str2]) {
+        const charCode = char.codePointAt(0)
+
+        if (!charCounts[charCode]) {
+            return false
+        } else {
+            charCounts[charCode]--
+        } 
+        
+    }
+
+    return true
 
 }
 

@@ -7,8 +7,15 @@
  * Input: the node c from the linked list a -> b-> c -> d -> e -> f
  * Result: nothing is returned, but the new linked list looks like a -> b -> d -> e -> f
  */
-const deleteMiddleNode = () => {
+const deleteMiddleNode = (node) => {
 
+    if (node === null || node.next === null) {
+        return false
+    }
+    
+    node.data = node.next.data
+    node.next = node.next.next
+    return true
 }
 
 /**
@@ -31,7 +38,7 @@ const intersection = () => {
  */
 
 const loopDetection = () => {
-    
+
 }
 
 /**
@@ -66,8 +73,27 @@ const removeDups = () => {
 /**
  * Implement an algorithm to find the kth to last element of a singly linked list.
  */
-const returnKthToLast = () => {
+const returnKthToLast = (list, k) => {
+    let p1 = list.head
+    let p2 = list.head
+    
+    // put p1 k nodes ahead of p2
+    for (let i = 0; i < k; i++) {
+        // out of bounds!
+        if (p1 === null) {
+            return null
+        }
 
+        p1 = p1.next
+    }
+
+    
+    while (p1 !== null) {
+        p2 = p2.next
+        p1 = p1.next
+    }
+
+    return p2
 }
 
 /**
