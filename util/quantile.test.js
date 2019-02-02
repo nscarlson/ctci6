@@ -21,7 +21,7 @@ describe('quintile', () => {
         expect(quantile(arr, 2, quantileType)).toEqual([3, 4])
         expect(quantile(arr, 3, quantileType)).toEqual([5, 6])
         expect(quantile(arr, 4, quantileType)).toEqual([7, 8])
-        expect(quantile(arr, 5, quantileType)).toEqual([9, 10])    
+        expect(quantile(arr, 5, quantileType)).toEqual([9, 10])
     })
 
     it('returns correct quantile groups', () => {
