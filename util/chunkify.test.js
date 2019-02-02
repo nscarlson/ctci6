@@ -21,6 +21,7 @@ describe('chunkify', () => {
             [7, 8],
             [9, 10]
         ])
+        
         expect(chunkify(length20Arr, 3)).toEqual([
             [1, 2, 3, 4, 5, 6, 7],
             [8, 9, 10, 11, 12, 13, 14],
