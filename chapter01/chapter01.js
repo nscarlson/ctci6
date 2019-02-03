@@ -124,10 +124,18 @@ const stringRotation = () => {
  * (Note: if implementing in Java, please use a character array so that you can perform this operation in place.)
  * 
  * EXAMPLE:
- * "Mr John Smith  " -> "Mr%20Dohn%20Smith"
+ * "Mr John Smith    " -> "Mr%20John%20Smith"
  */
-const urlify = () => {
-    
+const urlify = (str, length) => {
+    // Since we assume the string has sufficient space at the end
+    // we can slice to the length parameter
+    let result = str.slice(0, length)
+
+    for (let i = 0; i < result.length; i++) {
+        result = result.replace(/\ /g, '%20')
+    }
+
+    return result
 }
 
 /**
