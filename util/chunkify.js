@@ -15,17 +15,6 @@ const chunkify = (arr, n) => {
     if (length < 2) {
         return arr
     }
-
-    // Even case
-    if (length % n === 0) {
-        groupSize = Math.floor(length / n)
-
-        for (let i = 0; i < length; i += groupSize) {
-            result.push(arr.slice(i, i + groupSize))
-        }
-
-        return result
-    }
     
     // Uneven case
     for (let i = 0; i < length; i += groupSize, n--) {
