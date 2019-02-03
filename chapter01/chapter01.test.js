@@ -52,7 +52,10 @@ describe('Chapter 01', () => {
 
     describe('urlify', () => {
         it('returns correct results', () => {
-            expect(chapter01.urlify('Mr John Smith    ', 13)).toEqual('Mr%20John%20Smith')
+            expect(chapter01.urlify('Mr John Smith    ', 13))
+                .toEqual('Mr%20John%20Smith')
+            expect(chapter01.urlify(' parse this thing dingus           ', 25))
+                .toEqual('%20parse%20this%20thing%20dingus%20')
         })
     })
 
