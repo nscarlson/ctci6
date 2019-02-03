@@ -1,4 +1,6 @@
-const hoarePartition = (arr, lo, hi, pivot) => {
+const hoarePartition = (arr, lo, hi) => {
+    const pivot = arr[Math.floor((lo + hi) / 2)]
+
     while (lo <= hi) {
         while (arr[lo] < pivot) {
             lo++;
@@ -14,6 +16,7 @@ const hoarePartition = (arr, lo, hi, pivot) => {
             hi--;
         }
     }
+
     return lo;
 }
 
@@ -22,11 +25,10 @@ function quicksort (arr, lo = 0, hi = arr.length - 1) {
         return
     }
 
-    const pivot = arr[Math.floor((lo + hi) / 2)]
-    const index = hoarePartition(arr, lo, hi, pivot)
+    const pivot = hoarePartition(arr, lo, hi)
 
-    quicksort(arr, lo, index - 1)
-    quicksort(arr, index, hi)
+    quicksort(arr, lo, pivot - 1)
+    quicksort(arr, pivot, hi)
 
     return arr
 }
