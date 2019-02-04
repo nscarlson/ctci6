@@ -16,7 +16,8 @@ const contents = `
     }
 `
 /**
- * @returns 
+ * @param   {Object} payload    The payload object
+ * @returns {Object} Serialized protobuf message buffer
  */
 const stringifyWithFloats = (payload) => {
     const root = protobuf.parse(contents).root

@@ -1,7 +1,3 @@
-/**
- * @jest-environment node
- */
-
 const { stringifyWithFloats } = require('./stringifyWithFloats')
 
 describe('stringifyWithFloats', () => {
