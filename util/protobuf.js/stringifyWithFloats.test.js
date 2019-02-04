@@ -27,13 +27,12 @@ describe('stringifyWithFloats', () => {
 
     it('errors if payload is wrong type', () => {
         const invalidPayload = payload
-        invalidPayload.a = 'wrong type string, expecting int32'
 
+        invalidPayload.a = 'wrong type string, expecting int32'
         expect(() => stringifyWithFloats(invalidPayload))
             .toThrow('a: integer expected')
 
         invalidPayload.a = 1234.01
-
         expect(() => stringifyWithFloats(invalidPayload))
             .toThrow('a: integer expected')
     })
