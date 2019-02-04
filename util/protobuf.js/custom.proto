@@ -1,0 +1,15 @@
+// example protobuf3 definition file
+syntax = "proto3";
+package custompackage;
+
+message CustomDefinition {
+    int32 a = 1;
+    float b = 2;
+    string c = 3;
+    int32 d = 4;
+    
+    message InnerMessage {
+        float a = 1;
+        string b = 2;
+    }
+}

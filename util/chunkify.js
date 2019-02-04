@@ -16,7 +16,6 @@ const chunkify = (arr, n) => {
         return arr
     }
     
-    // Uneven case
     for (let i = 0; i < length; i += groupSize, n--) {
         groupSize = Math.ceil((length - i) / n)
 
