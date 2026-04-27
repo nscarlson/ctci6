@@ -11,6 +11,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "protobufjs": "^7.0.0"
+    "protobufjs": "^8.0.0"
   }
 }
